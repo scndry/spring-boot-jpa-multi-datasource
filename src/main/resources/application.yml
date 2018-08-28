@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+application:
+  datasource:
+    cafe:
+      url: jdbc:h2:file:${java.io.tmpdir}/h2/cafedb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      username: sa
+      password:
+      hikari:
+        auto-commit: false
+    cafelog:
+      url: jdbc:h2:file:${java.io.tmpdir}/h2/cafelogdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      username: sa
+      password:
+      hikari:
+        auto-commit: false
+
+logging:
+  level:
+    com.zaxxer.hikari: debug
+    org.springframework.transaction: trace
